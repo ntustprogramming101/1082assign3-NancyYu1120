@@ -105,7 +105,7 @@ void draw() {
     
     // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
     for (int row=0; row<24; row++) { 
-      soilN = row/4;
+      soilN = int(row/4);
       for (int col=0; col<8; col++) {
         image(soilImg[soilN], 0+col*soilImg[soilN].width, 160+row*soilImg[soilN].height);
       }
