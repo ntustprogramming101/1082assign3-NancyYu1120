@@ -14,6 +14,7 @@ PImage groundhogIdleImg, groundhogDownImg, groundhogLeftImg, groundhogRightImg;
 PImage [] soilImg = new PImage[6];
 
 int groundhogX = 80*4, groundhogY = 80;
+int soilN;
 
 // For debug function; DO NOT edit or remove this!
 int playerHealth = 0;
@@ -104,7 +105,7 @@ void draw() {
     
     // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
     for (int row=0; row<24; row++) { 
-      int soilN = row/4;
+      soilN = row/4;
       for (int col=0; col<8; col++) {
         image(soilImg[soilN], 0+col*soilImg[soilN].width, 160+row*soilImg[soilN].height);
       }
