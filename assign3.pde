@@ -94,13 +94,21 @@ void draw() {
     noStroke();
     rect(0, 160 - GRASS_HEIGHT, width, GRASS_HEIGHT);
 
+    // Player
+    image(groundhogIdleImg, groundhogX, groundhogY);
 
+    // Health UI
+    for (int i=0; i<playerHealth; i++) { 
+      image(life, lifeX+i*(life.width+lifeD), lifeY-cameraOffsetY);
+    }
+    
     // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
     for (int row=0; row<24; row++) { 
       int soilN = row/4;
       for (int col=0; col<8; col++) {
         image(soilImg[soilN], 0+col*soilImg[soilN].width, 160+row*soilImg[soilN].height);
       }
+
       if (row <8) {
         image(stone1, 0+row*stone1.width, 160+row*stone1.height);
       } else if (row <16) {
@@ -130,13 +138,7 @@ void draw() {
       }
     } 
 
-    // Player
-    image(groundhogIdleImg, groundhogX, groundhogY);
 
-    // Health UI
-    for (int i=0; i<playerHealth; i++) { 
-      image(life, lifeX+i*(life.width+lifeD), lifeY-cameraOffsetY);
-    }
     break;
 
   case GAME_OVER: // Gameover Screen
